@@ -24,3 +24,6 @@ void printUser(struct User*);
 void printLog(struct User*);
 void generateDigest(struct Digest* digest, struct User* User);
 void verify(struct User*);
+void tamperUsername(struct User* node, const char* newname);
+void tamperTimestamp(struct User* node);
+

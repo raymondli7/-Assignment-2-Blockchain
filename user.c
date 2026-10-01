@@ -132,3 +132,16 @@ void verify(struct User* curr) {
     printf("* All blocks have been verified. *\n");
     printf("**********************************\n");
 }
+void tamperUsername(struct User* node, const char* newName) {
+    if (node != NULL) {
+        strcpy(node->Username, newName);
+        printf("\n[TEST] Tampered with username. New name: %s\n", node->Username);
+    }
+}
+void tamperTimestamp(struct User* node) {
+    if (node != NULL) {
+        node->loginTime = node->loginTime + 3600;
+        node->localLoginTime = *localtime(&(node->loginTime));
+        printf("\n[TEST] Tampered with timestamp. Added 1 hour.\n");
+    }
+}
